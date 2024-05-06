@@ -1,5 +1,5 @@
 const app=require('./app')
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4040;
 const userRoutes = require('./routes/userRoutes.routes');
 const userRegister=require('./routes/userRegister.routes')
 const userLogin=require('./routes/userLogin.routes')
