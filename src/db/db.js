@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-const URL=process.env.MONGO_URL || "mongodb://localhost:27017/aliexpressDb"
+const URL=process.env.MONGO_URL 
 mongoose
   .connect(URL)
   .then(() => {
