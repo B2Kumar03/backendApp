@@ -13,4 +13,24 @@ router.post('/addCart',validation,async(req,res)=>{
      res.status(501).send({message:"Internal server error"})
     }
 })
+
+router.get('/getCart',async(req,res)=>{
+  const {userId}=req.body;
+
+  try {
+    const data=await cartModel.find({userId:userId})
+    // console.log(data);
+    if(!data){
+      res.status(401).send({meassage:"Data is not awailable."})
+    }
+    else{
+      res.status(201).send({data:data})
+
+    }
+  } catch (error) {
+    res.status(401).send({message:"Internal error"})
+  }
+})
+
+
 module.exports=router
